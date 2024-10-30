@@ -1,0 +1,160 @@
+/* Hero Section */
+.hero {
+    background: url('../images/hero.png') no-repeat center/cover;
+    color: white;
+    text-align: left;
+    padding-left: 40px;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #A91A1A;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #161616;
+}
+
+.hero input{
+    padding: 10px 20px;
+    border: none;
+    background-color: #A91A1A;
+    color: white;
+    cursor: pointer;
+}
+
+.hero input:hover{
+    background-color: #161616;
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+}
+
+/* Featured Products */
+.featured-products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.featured-products h2 {
+    margin-bottom: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    flex: 1 1 200px;
+    max-width: 300px;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Collection Showcase */
+.collection-showcase {
+    padding: 40px 20px;
+    background-color: #eee;
+    text-align: center;
+}
+
+.collection-showcase h2 {
+    margin-bottom: 20px;
+}
+
+.collections {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.collection {
+    flex: 1 1 200px;
+    max-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.collection img {
+    width: 100%;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    font-style: italic;
+}
+
+/* Responsive styles */
+@media (min-width: 750px) and (max-width: 1200px){
+    .hero {
+       background: url('../images/hero.png') no-repeat center/cover, rgba(0,0,0,0.7);
+       background-blend-mode: multiply;
+    }
+    .hero h1, .hero p {
+        color: white;
+    }
+    
+}
+
+@media (max-width: 750px){
+    .hero{
+        align-items: center;
+        background: none;
+        background-color: #FFCFCF;
+        height: 50vh;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero h1, .hero p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 25px;
+    }
+
+}
