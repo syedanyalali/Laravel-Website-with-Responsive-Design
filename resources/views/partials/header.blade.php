@@ -12,6 +12,7 @@
     </div>
 
     <div class="search">
+      <input type="search" placeholder="Search here...">
       <img src="{{ asset('images/search.svg') }}" alt="Store of Gems">
     </div>
 

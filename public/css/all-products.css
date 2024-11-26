@@ -1,0 +1,39 @@
+.all-products{
+    padding: 70px 0px 120px 0px;
+    background-color: #ffe4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+h1{
+    font-family: "Poppins";
+}
+
+table{
+    gap: 20px;
+}
+
+table, table thead tr th, table tbody tr td{
+    border: 1px solid black;
+}
+
+table thead tr th, table tbody tr td{
+    padding: 20px;
+}
+
+.action-icons{
+    width: 30px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}

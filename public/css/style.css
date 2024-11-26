@@ -20,8 +20,28 @@
 }
 
 /* Search styling */
+.search{
+    background-color: #A91A1A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 3px 2px 2px;
+    border-radius: 20px;
+}
 .search img{
-    height: 35px;
+    height: 25px;
+}
+
+.search input {
+    border-radius: 20px 0px 0px 20px;
+    outline: none;
+    border: none;
+    height: 5vh;
+    width: 15vw;
+    padding-left: 12px;
+    font-size: 14px;
+    color: grey;
 }
 
 /* Menu styling */
@@ -116,4 +136,19 @@ footer {
 
 footer p {
     margin: 5px 0;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 50px 0px;
+}
+
+.banner h1{
+    font-family: "Poppins";
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
