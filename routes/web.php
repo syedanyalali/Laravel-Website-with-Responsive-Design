@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,25 +17,19 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
-
-// Display all products (index)
 Route::get('/admin/products', [ProductController::class, 'index'])->name('products.index');
-
-// Show form to create a new product
 Route::get('/admin/products/create', [ProductController::class, 'create'])->name('products.create');
-
-// Store the newly created product
 Route::post('/admin/products', [ProductController::class, 'store'])->name('products.store');
-
-// Show form to edit an existing product
 Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
-
-// Update the existing product
 Route::put('/admin/products/{product}', [ProductController::class, 'update'])->name('products.update');
-
-// Delete an existing product
 Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 
+Route::get('/admin/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/admin/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+Route::post('/admin/categories', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::put('/admin/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
