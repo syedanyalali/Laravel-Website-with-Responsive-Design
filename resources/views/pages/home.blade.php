@@ -11,30 +11,21 @@
 <section class="hero" id="home">
     <h1>Exquisite Jewelry Collection</h1>
     <p>Discover the elegance and craftsmanship of our fine jewelry.</p>
-    <input type="button" value="Shop Now">
+    <a href="{{ route('products') }}"><input type="button" value="Shop Now"></a>
 </section>
 
 <!-- Featured Products Section -->
 <section class="featured-products" id="products">
     <h2>Featured Products</h2>
     <div class="products">
+        @foreach ($products as $product)
         <div class="product-card">
-            <img src="{{ asset('images/gold-necklace.webp') }}" alt="Gold Necklace">
-            <h3>Gold Necklace</h3>
-            <p>$299</p>
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+            <h3>{{ $product->name }}</h3>
+            <p>${{ $product->price }}</p>
+            <!-- <p><small>Category: {{ $product->category->name ?? 'Uncategorized' }}</small></p> -->
         </div>
-        <div class="product-card">
-            <img src="{{ asset('images/diamond-ring.webp') }}" alt="Diamond Ring">
-            <h3>Diamond Ring</h3>
-            <p>$599</p>
-        </div>
-        <a href="">
-            <div class="product-card">
-                <img src="{{ asset('images/pearl-earrings.webp') }}" alt="Pearl Earrings">
-                <h3>Pearl Earrings</h3>
-                <p>$199</p>
-            </div>
-        </a>
+        @endforeach
     </div>
 </section>
 

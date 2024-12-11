@@ -22,4 +22,10 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function home()
+    {
+        $products = Product::with('category')->take(6)->get(); // Fetch 6 products with their category
+        return view('pages.home', compact('products'));
+    }
 }

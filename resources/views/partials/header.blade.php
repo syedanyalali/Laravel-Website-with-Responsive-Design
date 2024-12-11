@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar">
     <div class="logo">
-    <a href="{{ route('home') }}"><img src="{{ asset('images/store-of-gems.png') }}" alt="Store of Gems"></a>
+      <a href="{{ route('home') }}"><img src="{{ asset('images/store-of-gems.png') }}" alt="Store of Gems"></a>
     </div>
 
     <!-- Desktop Menu -->
@@ -12,9 +12,14 @@
     </div>
 
     <div class="search">
-      <input type="search" placeholder="Search here...">
-      <img src="{{ asset('images/search.svg') }}" alt="Store of Gems">
+      <form action="{{ route('search') }}" method="GET">
+        <input type="search" name="query" placeholder="Search here..." value="{{ request('query') }}">
+        <button type="submit">
+          <img src="{{ asset('images/search.svg') }}" alt="Search">
+        </button>
+      </form>
     </div>
+
 
     <!-- Hamburger Menu Icon -->
     <div class="hamburger" onclick="toggleMenu()">

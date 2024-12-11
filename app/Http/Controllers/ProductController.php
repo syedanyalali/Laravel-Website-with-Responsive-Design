@@ -19,7 +19,7 @@ class ProductController extends Controller
 
         return view('admin.products.index', compact('products'));
     }
-    
+
     // Display the form to create a new product
     public function create()
     {
@@ -89,9 +89,30 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
     
+    // Delete the existing product
     public function destroy(Product $product)
     {
         $product->delete();
         return redirect()->route('products.index');
     }
+
+    // Showing products on products page
+    public function showProducts()
+    {
+        $products = Product::paginate(12); // Fetch 12 products per page
+        return view('pages.products', compact('products'));
+    }
+
+    // Search products in search bar on header
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    // Search for products by name, description, or other fields
+    $products = Product::where('name', 'LIKE', "%$query%")
+        ->orWhere('description', 'LIKE', "%$query%")
+        ->paginate(12); // Paginate the results
+
+    return view('pages.products', compact('products', 'query'));
+}
 }

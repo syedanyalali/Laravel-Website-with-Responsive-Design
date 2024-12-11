@@ -44,25 +44,16 @@
 
     <!-- Product Grid -->
     <section class="product-grid">
+        @forelse ($products as $product)
         <div class="product-card">
-            <img src="{{ asset('images/gold-necklace.webp') }}" alt="Gold Necklace">
-            <h3>Gold Necklace</h3>
-            <p>Elegant and timeless.</p>
-            <span class="price">$299</span>
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+            <h3>{{ $product->name }}</h3>
+            <!-- <p>{{ Str::limit($product->description, 50) }}</p> -->
+            <span class="price">${{ number_format($product->price, 2) }}</span>
         </div>
-        <div class="product-card">
-            <img src="{{ asset('images/diamond-ring.webp') }}" alt="Diamond Ring">
-            <h3>Diamond Ring</h3>
-            <p>Perfect for special occasions.</p>
-            <span class="price">$499</span>
-        </div>
-        <div class="product-card">
-            <img src="{{ asset('images/pearl-earrings.webp') }}" alt="Pearl Earrings">
-            <h3>Pearl Earrings</h3>
-            <p>Classic and beautiful.</p>
-            <span class="price">$199</span>
-        </div>
-        <!-- Additional product cards here -->
+        @empty
+        <p>No products available at the moment.</p>
+        @endforelse
     </section>
 </div>
 
