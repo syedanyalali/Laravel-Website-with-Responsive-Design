@@ -44,12 +44,12 @@
 
     <!-- Product Grid -->
     <section class="product-grid">
-        @forelse ($products as $product)
+        @forelse ($data as $row)
         <div class="product-card">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-            <h3>{{ $product->name }}</h3>
-            <!-- <p>{{ Str::limit($product->description, 50) }}</p> -->
-            <span class="price">${{ number_format($product->price, 2) }}</span>
+            <img src="{{ asset('storage/' . $row->image) }}" alt="{{ $row->name }}">
+            <h3>{{ $row->name }}</h3>
+            <!-- <p>{{ Str::limit($row->description, 50) }}</p> -->
+            <span class="price">${{ number_format($row->price, 2) }}</span>
         </div>
         @empty
         <p>No products available at the moment.</p>

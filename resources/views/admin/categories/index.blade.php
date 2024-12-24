@@ -8,24 +8,27 @@
 
 @section('content')
 <section class="admin-buttons-panel">
-        <a href="{{ route('products.create') }}">Add Products</a>
-        <a href="{{ route('products.index') }}">View Products</a>
-        <a href="{{ route('categories.create') }}">Add Categories</a>
-        <a href="{{ route('categories.index') }}">View Categories</a>
+    <a href="{{ route('products.create') }}">Add Products</a>
+    <a href="{{ route('products.index') }}">View Products</a>
+    <a href="{{ route('categories.create') }}">Add Categories</a>
+    <a href="{{ route('categories.index') }}">View Categories</a>
 </section>
 <section class="all-categories">
     <h1>All Categories</h1>
     <table class="table-container">
         <thead>
             <tr>
+                <th>S.No</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+            @php($i = 1)
             @foreach ($categories as $category)
             <tr>
+                <td>{{$i++}}</td>
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->description }}</td>
                 <td>

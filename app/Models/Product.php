@@ -18,6 +18,10 @@ class Product extends Model
         'featured',
         'category_id',
     ];
+    protected $casts = [
+        'featured' => 'boolean',
+        'price' => 'float',
+    ];
 
     public function category()
     {

@@ -8,16 +8,17 @@
 
 @section('content')
 <section class="admin-buttons-panel">
-        <a href="{{ route('products.create') }}">Add Products</a>
-        <a href="{{ route('products.index') }}">View Products</a>
-        <a href="{{ route('categories.create') }}">Add Categories</a>
-        <a href="{{ route('categories.index') }}">View Categories</a>
+    <a href="{{ route('products.create') }}">Add Products</a>
+    <a href="{{ route('products.index') }}">View Products</a>
+    <a href="{{ route('categories.create') }}">Add Categories</a>
+    <a href="{{ route('categories.index') }}">View Categories</a>
 </section>
 <section class="all-products">
     <h1>All Products</h1>
     <table class="table-container">
         <thead>
             <tr>
+                <th>S.No</th>
                 <th>Image</th>
                 <th>Name</th>
                 <th>Description</th>
@@ -27,22 +28,24 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($products as $product)
+            @php($i = 1)
+            @foreach ($data as $row)
             <tr>
+                <td>{{$i++}}</td>
                 <td>
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="50">
+                    <img src="{{ asset('storage/' . $row->image) }}" alt="{{ $row->name }}" width="50">
                 </td>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->description }}</td>
-                <td>{{ $product->category->name ?? 'No Category' }}</td>
-                <td>${{ $product->price }}</td>
-                
+                <td>{{ $row->name }}</td>
+                <td>{{ $row->description }}</td>
+                <td>{{ $row->category->name ?? 'No Category' }}</td>
+                <td>${{ $row->price }}</td>
+
                 <td>
-                    <a href="{{ route('products.edit', $product->id) }}">
+                    <a href="{{ route('products.edit', $row->id) }}">
                         <img class="action-icons" src="{{ asset('images/edit.svg') }}" alt="">
                     </a>
                     &nbsp;
-                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
+                    <form action="{{ route('products.destroy', parameters: $row->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit">
