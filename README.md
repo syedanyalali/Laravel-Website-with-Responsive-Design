@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -63,4 +63,36 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
+
+
+# Store of Gems - Jewellery Website
+
+## Project Overview
+
+The **Store of Gems** is an online jewellery store designed to showcase and sell a variety of exquisite gemstones, rings, necklaces, and other jewellery pieces. This website allows users to browse through different collections and products. The platform is built using **Laravel**, a powerful PHP framework that ensures a clean, maintainable, and scalable website.
+
+### Features
+- User authentication (sign up, login, logout)
+- Browse different jewellery collections
+- Admin panel to manage products and categories
+- Responsive design for mobile and desktop users
+- Search
+- API crud implementation
+
+## Setup Instructions
+
+Follow the steps below to set up the project on your local environment.
+
+### Prerequisites
+
+- PHP >= 7.4
+- Composer
+- MySQL or SQLite (for local development)
+- Node.js and NPM (for front-end assets)
+  
+### Clone the Repository
+
+```bash
+git clone https://github.com/syedanyalali/Laravel-Website-with-Responsive-Design
+cd Laravel-Website-with-Responsive-Design
