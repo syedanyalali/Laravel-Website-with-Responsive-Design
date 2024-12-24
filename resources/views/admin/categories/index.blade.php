@@ -15,7 +15,7 @@
 </section>
 <section class="all-categories">
     <h1>All Categories</h1>
-    <table>
+    <table class="table-container">
         <thead>
             <tr>
                 <th>Name</th>

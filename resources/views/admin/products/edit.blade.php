@@ -1,4 +1,3 @@
-{{-- resources/views/admin/products/edit.blade.php --}}
 @extends('admin')
 
 @section('title', 'Edit Product')
@@ -9,10 +8,10 @@
 
 @section('content')
 <section class="admin-buttons-panel">
-        <a href="{{ route('products.create') }}">Add Products</a>
-        <a href="{{ route('products.index') }}">View Products</a>
-        <a href="{{ route('categories.create') }}">Add Categories</a>
-        <a href="{{ route('categories.index') }}">View Categories</a>
+    <a href="{{ route('products.create') }}">Add Products</a>
+    <a href="{{ route('products.index') }}">View Products</a>
+    <a href="{{ route('categories.create') }}">Add Categories</a>
+    <a href="{{ route('categories.index') }}">View Categories</a>
 </section>
 <section class="edit-product-form">
     <h1>Edit Product</h1>
@@ -22,17 +21,23 @@
         <input type="text" name="name" value="{{ $product->name }}" required>
         <textarea name="description" required>{{ $product->description }}</textarea>
         <input type="number" name="price" value="{{ $product->price }}" required>
-        
+
         {{-- Category Dropdown --}}
         <select name="category_id" required>
             <option value="" disabled>Select Category</option>
             @foreach ($categories as $category)
-                <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
-                    {{ $category->name }}
-                </option>
+            <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                {{ $category->name }}
+            </option>
             @endforeach
         </select>
-        
+
+        {{-- Featured Dropdown --}}
+        <select name="featured" required>
+            <option value="1" {{ $product->featured ? 'selected' : '' }}>True</option>
+            <option value="0" {{ !$product->featured ? 'selected' : '' }}>False</option>
+        </select>
+
         <input type="file" name="image" accept="image/*">
         <button type="submit">Update Product</button>
     </form>

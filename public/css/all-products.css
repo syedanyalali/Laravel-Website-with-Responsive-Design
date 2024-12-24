@@ -1,5 +1,5 @@
 .all-products{
-    padding: 70px 0px 120px 0px;
+    padding: 70px 50px 120px 50px;
     background-color: #ffe4e4;
     display: flex;
     justify-content: center;
@@ -9,20 +9,35 @@
     width: 80%;
 }
 
+.table-container {
+    max-height: 400px;  
+    overflow-y: auto;
+    display: block;
+}
+
 h1{
     font-family: "Poppins";
 }
 
 table{
     gap: 20px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-table, table thead tr th, table tbody tr td{
+/* table, table thead tr th, table tbody tr td{
     border: 1px solid black;
+} */
+
+th {
+    background-color: black;
+    color:#ffe4e4;
 }
 
 table thead tr th, table tbody tr td{
-    padding: 20px;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
 }
 
 .action-icons{

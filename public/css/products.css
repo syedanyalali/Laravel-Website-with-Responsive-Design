@@ -40,7 +40,7 @@
   .product-grid {
     flex: 3;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
     gap: 20px;
   }
 

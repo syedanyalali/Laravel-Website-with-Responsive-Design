@@ -15,7 +15,7 @@
 </section>
 <section class="all-products">
     <h1>All Products</h1>
-    <table>
+    <table class="table-container">
         <thead>
             <tr>
                 <th>Image</th>

@@ -42,4 +42,9 @@ button:hover{
     background-color: black;
 }
 
-
+select{
+    padding: 10px 5px;
+}
+select option:hover{
+    background-color: #A91A1A;
+}

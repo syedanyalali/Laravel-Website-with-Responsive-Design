@@ -37,6 +37,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'category_id' => 'required|exists:categories,id', // Validation for category selection
             'image' => 'nullable|image|max:2048',
+            'featured' => 'required|boolean', // Validate the featured field
         ]);
 
         $product = new Product();
@@ -45,6 +46,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->category_id = $request->category_id; // Store the selected category_id
 
+        $product = new Product($request->all()); // Mass assignment handles the fields
         // Handle the image upload if there's a file
         if ($request->hasFile('image')) {
             $product->image = $request->file('image')->store('products', 'public');
@@ -72,6 +74,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'category_id' => 'required|exists:categories,id', // Validation for category selection
             'image' => 'nullable|image|max:2048',
+            'featured' => 'required|boolean', // Validate the featured field
         ]);
 
         $product->name = $request->name;
@@ -79,6 +82,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->category_id = $request->category_id; // Update the category_id
 
+        $product->fill($request->all());
         // Handle the image upload if there's a new file
         if ($request->hasFile('image')) {
             $product->image = $request->file('image')->store('products', 'public');

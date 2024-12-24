@@ -18,14 +18,16 @@
 <section class="featured-products" id="products">
     <h2>Featured Products</h2>
     <div class="products">
-        @foreach ($products as $product)
+        @forelse ($featured_products as $product)
         <div class="product-card">
             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             <h3>{{ $product->name }}</h3>
             <p>${{ $product->price }}</p>
             <!-- <p><small>Category: {{ $product->category->name ?? 'Uncategorized' }}</small></p> -->
         </div>
-        @endforeach
+        @empty
+        <p>No featured products available at the moment.</p>
+        @endforelse
     </div>
 </section>
 
@@ -42,6 +44,23 @@
         <div class="collection">
             <img src="{{ asset('images/diamond-collection.jpg') }}" alt="Diamond Collection">
         </div>
+    </div>
+</section>
+
+<!-- Latest Products Section -->
+<section class="featured-products" id="products">
+    <h2>Latest Products</h2>
+    <div class="products">
+        @forelse ($products as $product)
+        <div class="product-card">
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+            <h3>{{ $product->name }}</h3>
+            <p>${{ $product->price }}</p>
+            <!-- <p><small>Category: {{ $product->category->name ?? 'Uncategorized' }}</small></p> -->
+        </div>
+        @empty
+        <p>No featured products available at the moment.</p>
+        @endforelse
     </div>
 </section>
 
