@@ -14,9 +14,9 @@ main.admin-main{
 /* Navbar styling */
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 70px;
     color: white;
 }
 
@@ -195,14 +195,20 @@ footer p {
     background-color: black;
 }
 
-/* .dropdown-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+.nav-item .login-register {
+    text-decoration: none;
+    color: black;
+}
 
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav-item .login-register:hover {
+    color: #A91A1A;
+}
+
+.nav-item .username {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+.nav-item .dropdown-item {
+    text-decoration: none;
+    color: #A91A1A;
 }
