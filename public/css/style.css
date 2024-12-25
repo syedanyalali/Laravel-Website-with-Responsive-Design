@@ -194,3 +194,15 @@ footer p {
 .admin-buttons-panel a:hover{
     background-color: black;
 }
+
+/* .dropdown-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
