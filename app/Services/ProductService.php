@@ -17,6 +17,11 @@ class ProductService
         return Product::all();
     }
 
+    public function getAllpaginateProducts()
+    {
+        return Product::query();
+    }
+
     /**
      * Create a new product.
      */

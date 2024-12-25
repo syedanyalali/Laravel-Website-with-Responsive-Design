@@ -99,6 +99,10 @@
     background-color: #ddd;
 }
 
+.pagination svg{
+    height: 20px;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .container {

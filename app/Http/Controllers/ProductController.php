@@ -24,8 +24,8 @@ class ProductController extends Controller
 
     public function showProducts()
     {
-        // Get 12 products per page
-        $data = $this->productService->getAllProducts()->take(12);
+        // Paginate the products (12 per page)
+        $data = $this->productService->getAllpaginateProducts()->paginate(12);
 
         // Pass the paginated data to the view
         return view('pages.products', compact('data'));
