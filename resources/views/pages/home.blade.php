@@ -20,10 +20,12 @@
     <div class="products">
         @forelse ($featured_products as $product)
         <div class="product-card">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-            <h3>{{ $product->name }}</h3>
-            <p>${{ $product->price }}</p>
-            <!-- <p><small>Category: {{ $product->category->name ?? 'Uncategorized' }}</small></p> -->
+            <a class="single-product" href="{{ route('products.show', $product->id) }}">
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                <h3>{{ $product->name }}</h3>
+                <p>${{ $product->price }}</p>
+                <!-- <p><small>Category: {{ $product->category->name ?? 'Uncategorized' }}</small></p> -->
+            </a>
         </div>
         @empty
         <p>No featured products available at the moment.</p>
@@ -53,10 +55,12 @@
     <div class="products">
         @forelse ($products as $product)
         <div class="product-card">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-            <h3>{{ $product->name }}</h3>
-            <p>${{ $product->price }}</p>
-            <!-- <p><small>Category: {{ $product->category->name ?? 'Uncategorized' }}</small></p> -->
+            <a class="single-product" href="{{ route('products.show', $product->id) }}">
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                <h3>{{ $product->name }}</h3>
+                <p>${{ $product->price }}</p>
+                <!-- <p><small>Category: {{ $product->category->name ?? 'Uncategorized' }}</small></p> -->
+            </a>
         </div>
         @empty
         <p>No featured products available at the moment.</p>

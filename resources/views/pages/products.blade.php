@@ -46,10 +46,12 @@
     <section class="product-grid">
         @forelse ($data as $row)
         <div class="product-card">
-            <img src="{{ asset('storage/' . $row->image) }}" alt="{{ $row->name }}">
-            <h3>{{ $row->name }}</h3>
-            <!-- <p>{{ Str::limit($row->description, 50) }}</p> -->
-            <span class="price">${{ number_format($row->price, 2) }}</span>
+            <a class="single-product" href="{{ route('products.show', $row->id) }}">
+                <img src="{{ asset('storage/' . $row->image) }}" alt="{{ $row->name }}">
+                <h3>{{ $row->name }}</h3>
+                <!-- <p>{{ Str::limit($row->description, 50) }}</p> -->
+                <span class="price">${{ number_format($row->price, 2) }}</span>
+            </a>
         </div>
         @empty
         <p>No products available at the moment.</p>

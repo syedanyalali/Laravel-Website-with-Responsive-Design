@@ -128,6 +128,10 @@ h2{
     font-style: italic;
 }
 
+.single-product{
+    text-decoration: none;
+}
+
 /* Responsive styles */
 @media (max-width: 1024px) {
     .products {

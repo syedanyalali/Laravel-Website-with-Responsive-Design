@@ -31,6 +31,11 @@ class ProductController extends Controller
         return view('pages.products', compact('data'));
     }
 
+    public function show($id)
+    {
+        $product = $this->productService->getSingleProduct($id); // Retrieve product by ID
+        return view('pages.product-detail', compact('product'));
+    }
 
     public function create()
     {
@@ -71,4 +76,11 @@ class ProductController extends Controller
         Session::flash('alert-class', $response['success'] ? 'alert-success' : 'alert-danger');
         return redirect(route('products.index'));
     }
+
+    // public function search(Request $request)
+    // {
+    //     $query = $request->input('query'); // Get the search query from the request
+    //     $products = $this->productService->searchProducts($query); // Call a service method to handle the search
+    //     return view('pages.products', compact('products')); // Return the view with the search results
+    // }
 }

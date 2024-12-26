@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->withoutMiddleware('auth')->name('home');
 Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/search', [ProductController::class, 'search'])->name('search');
 // Route::get('/products', function () {return view('pages.products');})->name('products');
 Route::get('/contact', function () {return view('pages.contact');})->name('contact');

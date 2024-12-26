@@ -22,6 +22,12 @@ class ProductService
         return Product::query();
     }
 
+    public function getSingleProduct($id)
+    {
+        return Product::with('category')->findOrFail($id); // Include related category if needed
+    }
+
+
     /**
      * Create a new product.
      */
@@ -211,4 +217,11 @@ class ProductService
             return ['success' => false, 'message' => 'Something went wrong. Please try again later.'];
         }
     }
+
+    // public function searchProducts($query)
+    // {
+    //     return Product::where('name', 'LIKE', "%$query%")
+    //         ->orWhere('description', 'LIKE', "%$query%")
+    //         ->get();
+    // }
 }
