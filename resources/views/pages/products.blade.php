@@ -44,7 +44,7 @@
 
     <!-- Product Grid -->
     <section class="product-grid">
-        @forelse ($data as $row)
+        @forelse ($products as $row)
         <div class="product-card">
             <a class="single-product" href="{{ route('products.show', $row->id) }}">
                 <img src="{{ asset('storage/' . $row->image) }}" alt="{{ $row->name }}">
@@ -61,6 +61,10 @@
 
 <!-- Pagination -->
 <div class="pagination">
-    {{ $data->links() }}
+    @if ($products instanceof \Illuminate\Contracts\Pagination\LengthAwarePaginator)
+    {{ $products->links() }}
+    @else
+    <p>Pagination not available.</p>
+    @endif
 </div>
 @endsection

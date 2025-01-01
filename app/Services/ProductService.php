@@ -17,9 +17,14 @@ class ProductService
         return Product::all();
     }
 
+    // public function getAllpaginateProducts()
+    // {
+    //     return Product::query();
+    // }
+
     public function getAllpaginateProducts()
     {
-        return Product::query();
+        return Product::paginate(12);
     }
 
     public function getSingleProduct($id)
@@ -218,10 +223,10 @@ class ProductService
         }
     }
 
-    // public function searchProducts($query)
-    // {
-    //     return Product::where('name', 'LIKE', "%$query%")
-    //         ->orWhere('description', 'LIKE', "%$query%")
-    //         ->get();
-    // }
+    public function searchProducts($query)
+    {
+        return Product::where('name', 'LIKE', "%$query%")
+            ->orWhere('description', 'LIKE', "%$query%")
+            ->get();
+    }
 }

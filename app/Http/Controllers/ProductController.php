@@ -22,14 +22,26 @@ class ProductController extends Controller
         return view('admin.products.index', compact('data'));
     }
 
+    // public function showProducts()
+    // {
+    //     // Paginate the products (12 per page)
+    //     $products = $this->productService->getAllpaginateProducts();
+
+    //     // Pass the paginated data to the view
+    //     return view('pages.products', compact('products'));
+    // }
+
     public function showProducts()
     {
-        // Paginate the products (12 per page)
-        $data = $this->productService->getAllpaginateProducts()->paginate(12);
+        $products = $this->productService->getAllpaginateProducts();
 
-        // Pass the paginated data to the view
-        return view('pages.products', compact('data'));
+        if (!($products instanceof \Illuminate\Contracts\Pagination\LengthAwarePaginator)) {
+            abort(500, 'Pagination failed. Ensure proper paginator is returned.');
+        }
+
+        return view('pages.products', compact('products'));
     }
+
 
     public function show($id)
     {
@@ -77,10 +89,10 @@ class ProductController extends Controller
         return redirect(route('products.index'));
     }
 
-    // public function search(Request $request)
-    // {
-    //     $query = $request->input('query'); // Get the search query from the request
-    //     $products = $this->productService->searchProducts($query); // Call a service method to handle the search
-    //     return view('pages.products', compact('products')); // Return the view with the search results
-    // }
+    public function search(Request $request)
+    {
+        $query = $request->input('query'); // Get the search query from the request
+        $products = $this->productService->searchProducts($query); // Call a service method to handle the search
+        return view('pages.products', compact('products')); // Return the view with the search results
+    }
 }
